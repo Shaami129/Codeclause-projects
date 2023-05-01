@@ -2,10 +2,6 @@ import cv2
 import numpy as np
 import playsound
 
-def play_alarm():
-    # play an alarm sound when the driver is drowsy
-    playsound.playsound('alarm.mp3')
-
 def detect_drowsiness(frame, eye_region):
     # apply canny edge detection to the eye region
     canny = cv2.Canny(eye_region, 30, 50)
@@ -18,6 +14,10 @@ def detect_drowsiness(frame, eye_region):
         return True
     else:
         return False
+
+def play_alarm():
+    # play an alarm sound when the driver is drowsy
+    playsound.playsound('C:\\Users\\shame\\OneDrive\\Desktop\\Codeclause projects\\Drivers_drowsiness_detection\\alarm.mp3')
 
 if __name__ == "__main__":
     # initialize video capture object
